@@ -1,0 +1,175 @@
+.theme-salon .section:first-of-type {
+    margin-top: 0;
+}
+.theme-salon .section:nth-child(odd) {
+    background-color: #fff;
+}
+.theme-salon [class*=s_navigation] {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+    .theme-salon .section {
+        margin: 0;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+.theme-salon .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.section:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+}
+.s_navigation {
+    padding-top: 0;
+}
+@media screen and (min-width: 768px) {
+    .section {
+        padding-top: 80px;
+    }
+}
+.section {
+    padding-top: 40px;
+}
+* {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.theme-salon {
+    background-color: #f9fafc;
+    color: #4e5f74;
+}
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 22px;
+    }
+}
+body {
+    word-wrap: break-word;
+}
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: white;
+}
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+/*-------------------------ここから------------------------*/
+.top-page.header {
+    background-color: #fff;
+    margin-top: 0;
+    padding-top:0;
+    padding-bottom:0;
+    margin:0;
+}
+.m_navigationMenu{
+    display:flex;
+    margin-right: 0;
+    padding-right: 0;
+}
+/* ナビのUL全体の設定 */
+.m_navigationMenu {
+    list-style: none;          /* ● を消す */
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    color: black;
+    display: flex;             /* 横並びにする */
+    justify-content: flex-end; /* 右端に寄せる */
+    gap: 24px;                 /* 項目同士のすき間（お好みで調整） */
+}
+
+/* li の余分な装飾を消す用（テンプレ側対策） */
+.m_navigationMenu li {
+    margin: 0;
+    padding: 0;
+    position: static !important; /* もし absolute で重なってたらリセット */
+}
+
+/* リンクの見た目（必要なら） */
+.m_navigationMenu a {
+    text-decoration: none;
+    /* color はすでに inline style で指定されていますが、
+       上書きしたければここに color: #333; などを書いてください */
+}
+/* ナビのリンクを黒にする */
+.m_navigationMenu a,
+.m_navigationMenu a:visited {
+    color: #333333 !important;  /* 好きな黒系に変更OK */
+    text-decoration: none;      /* 下線も消したい場合 */
+}
+
+/* ホバー時に色を変えたくないなら同じ色を指定 */
+.m_navigationMenu a:hover {
+    color: #333333;
+    text-decoration: underline; /* ここはお好み。消したいなら none */
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.cta-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  min-width: 260px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.cta-company { background-color: #88c5da; }
+.cta-owner   { background-color: #f8b4b0; }
+
+.cta-card::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: 0;
+  width: 160px;
+  height: 100%;
+  background-color: rgba(255,255,255,0.25);
+  transform: skewX(-20deg);
+}
+
+/* 絵文字アイコン用 */
+.cta-icon {
+  margin-right: 12px;
+  font-size: 32px;
+}
+
+/* テキスト＆矢印 */
+.cta-text { white-space: nowrap; }
+.cta-arrow { margin-left: auto; font-size: 20px; }
+
+.cta-card:hover { opacity: 0.9; }
