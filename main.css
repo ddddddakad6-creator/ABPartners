@@ -1,175 +1,679 @@
-.theme-salon .section:first-of-type {
-    margin-top: 0;
-}
-.theme-salon .section:nth-child(odd) {
-    background-color: #fff;
-}
-.theme-salon [class*=s_navigation] {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-@media screen and (min-width: 768px) {
-    .theme-salon .section {
-        margin: 0;
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-}
-.theme-salon .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-.section:first-of-type {
-    margin-top: 0;
-    padding-top: 0;
-}
-.s_navigation {
-    padding-top: 0;
-}
-@media screen and (min-width: 768px) {
-    .section {
-        padding-top: 80px;
-    }
-}
-.section {
-    padding-top: 40px;
-}
-* {
-    box-sizing: border-box;
-}
-user agent stylesheet
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
-.theme-salon {
-    background-color: #f9fafc;
-    color: #4e5f74;
-}
-@media screen and (min-width: 768px) {
-    body {
-        font-size: 22px;
-    }
-}
-body {
-    word-wrap: break-word;
-}
-body {
-    font-family: sans-serif;
-    font-size: 14px;
-    line-height: 1.428571429;
-    color: #333;
-    background-color: white;
-}
-html {
-    font-size: 10px;
-    -webkit-tap-highlight-color: transparent;
-}
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
-*:before, *:after {
-    box-sizing: border-box;
-}
-*:before, *:after {
-    box-sizing: border-box;
+/*
+  Aoyama Business Partners (Peraichi "accountingfirm"-like) style
+  - Built to match the screenshots you shared: clean navigation, gradient section bands,
+    centered headings with underline, card lists, flow boxes, FAQ, footer.
+  - Works with the class names in your current index.html.
+*/
+
+:root{
+  --bg:#f6f7f9;
+  --panel:#ffffff;
+  --text:#2b2f36;
+  --muted:#6b7484;
+  --line:#d9dde5;
+  --primary:#2f6db5;
+  --primary-dark:#2a5aa8;
+  --accent:#f27e18;
+  --mask-a: rgba(62, 188, 196, .86);
+  --mask-b: rgba(67, 86, 190, .86);
+  --shadow: 0 10px 24px rgba(18, 28, 45, .08);
+  --radius: 14px;
+  --container: 1100px;
 }
 
-/*-------------------------ここから------------------------*/
-.top-page.header {
-    background-color: #fff;
-    margin-top: 0;
-    padding-top:0;
-    padding-bottom:0;
-    margin:0;
+/* ----- reset ----- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  color:var(--text);
+  background:var(--bg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  line-height:1.75;
 }
+img{max-width:100%; height:auto; display:block;}
+a{color:inherit; text-decoration:none;}
+
+/* ----- utility-ish (Peraichi-like) ----- */
+.text-center{text-align:center;}
+.text-bold{font-weight:700;}
+.img-full{width:100%;}
+
+.font-size-14px{font-size:14px;}
+.font-size-16px{font-size:16px;}
+.font-size-18px{font-size:18px;}
+.font-size-20px{font-size:20px;}
+.font-size-22px{font-size:18px;} /* desktop nav: keep a bit smaller */
+.font-size-24px{font-size:24px;}
+.font-size-32px{font-size:32px;}
+.font-size-36px{font-size:36px;}
+
+.mt-20px{margin-top:20px;}
+.ml-20px{margin-left:20px;}
+.padding_tb0{padding-top:0; padding-bottom:0;}
+.padding_tb40{padding-top:40px; padding-bottom:40px;}
+
+/* ----- layout container / grid ----- */
+.container-fluid{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  margin-left:-14px;
+  margin-right:-14px;
+}
+[class*="col-"]{
+  padding-left:14px;
+  padding-right:14px;
+  width:100%;
+}
+
+/* xs */
+.col-xs-12{width:100%;}
+.col-xs-8{width:66.6667%;}
+.col-xs-offset-2{margin-left:16.6667%;}
+
+/* sm */
+@media (min-width:768px){
+  .col-sm-12{width:100%;}
+  .col-sm-8{width:66.6667%;}
+  .col-sm-6{width:50%;}
+  .col-sm-4{width:33.3333%;}
+  .col-sm-offset-0{margin-left:0;}
+}
+
+/* ----- section base ----- */
+.section{
+  width:100%;
+  padding: 64px 0;
+  background: var(--panel);
+}
+.top-page.header{background:transparent; padding:0;}
+
+/* ----- navigation ----- */
+.m_navigation{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background:#fff;
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.navigationHeader{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding: 18px 22px;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
 .m_navigationMenu{
-    display:flex;
-    margin-right: 0;
-    padding-right: 0;
+  list-style:none;
+  display:flex;
+  gap: 34px;
+  align-items:center;
+  justify-content:flex-end;
+  margin:0;
+  padding: 0 22px 18px;
+  max-width: var(--container);
+  margin-left:auto;
+  margin-right:auto;
+  font-weight:600;
+  letter-spacing:.02em;
 }
-/* ナビのUL全体の設定 */
-.m_navigationMenu {
-    list-style: none;          /* ● を消す */
-    margin: 0;
+.m_navigationMenu a{
+  position:relative;
+  padding: 6px 0;
+  color:#2c2f35;
+}
+.m_navigationMenu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-4px;
+  height:2px;
+  background:transparent;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .2s ease, background .2s ease;
+}
+.m_navigationMenu a:hover::after{background:var(--primary); transform:scaleX(1);}
+
+.btn_navigationToggle{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.btn_navigationToggle i{
+  width:20px;
+  height:2px;
+  background:#2c2f35;
+  position:relative;
+  display:block;
+}
+.btn_navigationToggle i::before,
+.btn_navigationToggle i::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:20px;
+  height:2px;
+  background:#2c2f35;
+  transition:transform .2s ease, top .2s ease, opacity .2s ease;
+}
+.btn_navigationToggle i::before{top:-7px;}
+.btn_navigationToggle i::after{top:7px;}
+
+@media (max-width: 860px){
+  .btn_navigationToggle{display:flex;}
+  .m_navigationMenu{
+    display:none;
+    flex-direction:column;
+    gap: 0;
     padding: 0;
-    font-size: 22px;
-    color: black;
-    display: flex;             /* 横並びにする */
-    justify-content: flex-end; /* 右端に寄せる */
-    gap: 24px;                 /* 項目同士のすき間（お好みで調整） */
+    border-top:1px solid rgba(0,0,0,.06);
+  }
+  .m_navigation.is-open .m_navigationMenu{display:flex;}
+  .m_navigationMenu li{width:100%;}
+  .m_navigationMenu a{
+    display:block;
+    padding: 14px 22px;
+  }
+  .m_navigationMenu a::after{display:none;}
 }
 
-/* li の余分な装飾を消す用（テンプレ側対策） */
-.m_navigationMenu li {
-    margin: 0;
-    padding: 0;
-    position: static !important; /* もし absolute で重なってたらリセット */
+/* ----- hero ----- */
+.s_hero{padding:0; background:transparent;}
+.salon-s_hero-txtleft .pera1-bg-editable{
+  min-height: 420px;
+  display:flex;
+  align-items:center;
+  padding: 64px 0;
+}
+.salon-hero-txtleft{display:flex;}
+.salon-hero-txtleft-txt{
+  margin-left: 40px;
+  padding: 12px 0;
+}
+@media (max-width:768px){
+  .salon-hero-txtleft-txt{margin-left: 0; text-align:center;}
 }
 
-/* リンクの見た目（必要なら） */
-.m_navigationMenu a {
-    text-decoration: none;
-    /* color はすでに inline style で指定されていますが、
-       上書きしたければここに color: #333; などを書いてください */
+/* ----- CTA cards (banners) ----- */
+.salon-s_social{background:#fff;}
+.salon-banner{width:100%; display:flex; justify-content:center;}
+.cta-buttons{display:flex; gap: 18px; align-items:center; justify-content:center; flex-wrap:wrap;}
+.cta-card{
+  width: 280px;
+  max-width: 92vw;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 6px 16px rgba(18, 28, 45, .08);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-/* ナビのリンクを黒にする */
-.m_navigationMenu a,
-.m_navigationMenu a:visited {
-    color: #333333 !important;  /* 好きな黒系に変更OK */
-    text-decoration: none;      /* 下線も消したい場合 */
+.cta-card:hover{transform: translateY(-2px); box-shadow: 0 10px 22px rgba(18, 28, 45, .12);}
+.cta-card .cta-icon{font-size:22px;}
+.cta-card .cta-text{font-weight:700; letter-spacing:.03em;}
+.cta-card .cta-arrow{opacity:.65;}
+.cta-company{background: linear-gradient(90deg, rgba(47, 176, 196,.18), rgba(47, 176, 196,.08));}
+.cta-owner{background: linear-gradient(90deg, rgba(242, 126, 24,.18), rgba(242, 126, 24,.08));}
+
+/* ----- gradient mask sections (big band) ----- */
+.salon-s_btnbar-gradient,
+.salon-s_catch{
+  padding:0;
+  background:transparent;
 }
 
-/* ホバー時に色を変えたくないなら同じ色を指定 */
-.m_navigationMenu a:hover {
-    color: #333333;
-    text-decoration: underline; /* ここはお好み。消したいなら none */
+.salon-gradient_mask{
+  background: linear-gradient(90deg, var(--mask-a), var(--mask-b));
 }
 
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
+.salon-btnbar{
+  padding: 56px 0;
+}
+.salon-btnbar .e_txt{
+  max-width: 840px;
+  margin: 0 auto;
+  color:#fff;
+  text-align:center;
+  font-weight:600;
+}
+.salon-btnbar .e_txt div{line-height:1.85;}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 48px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.92);
+  color:#fff;
+  background: transparent;
+  font-weight:700;
+  letter-spacing:.08em;
+  transition: background .15s ease, transform .15s ease;
+}
+.btn:hover{background: rgba(255,255,255,.12); transform: translateY(-1px);}
+.e_btn{text-align:center; margin-top: 22px;}
+
+/* section title (background image) */
+.salon-catch{
+  padding: 44px 0;
+}
+.salon-catch .e_txt{
+  text-align:center;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:.04em;
 }
 
-.cta-card {
+/* ----- point / topics ----- */
+.s_card-topImg-1col .m_card-topImg{
+  max-width: 860px;
+  margin: 0 auto;
+}
+.s_card-topImg-1col .e_head{
+  color: #2b2f36;
+  font-weight:700;
+}
+.s_card-topImg-1col .e_txt{margin-top: 22px;}
+
+/* ----- headings (center + underline) ----- */
+.section h2.e_head,
+.section h3.e_head{
+  margin: 0;
+}
+.section h2.e_head{
+  text-align:center;
+  font-weight:700;
+  letter-spacing:.05em;
+}
+.section h2.e_head::after{
+  content:"";
+  display:block;
+  width: 64px;
+  height: 2px;
+  background: rgba(0,0,0,.18);
+  margin: 12px auto 0;
+}
+
+/* ----- message (right image) ----- */
+.m_card-rightImg-middle{
+  display:flex;
+  gap: 36px;
+  align-items:center;
+  justify-content:center;
+}
+.m_card-rightImg-middle .card-rightImg-middle_ctt{
+  flex: 1 1 520px;
+  max-width: 520px;
+}
+.m_card-rightImg-middle .e_img{
+  flex: 0 0 380px;
+  max-width: 380px;
+}
+.m_card-rightImg-middle .e_img img{
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.m_card-rightImg-middle .e_txt{color:var(--muted); margin-top: 10px;}
+
+@media (max-width: 900px){
+  .m_card-rightImg-middle{flex-direction:column;}
+  .m_card-rightImg-middle .e_img{max-width: 520px; width:100%;}
+}
+
+/* ----- table ----- */
+.s_table .m_table{
+  width:100%;
+  border-collapse:collapse;
+  max-width: 860px;
+  margin: 0 auto;
+  background:#fff;
+}
+.s_table .m_table td{
+  border-top: 1px solid var(--line);
+  padding: 14px 16px;
+  vertical-align:top;
+}
+.s_table .m_table tr:last-child td{border-bottom:1px solid var(--line);}
+.s_table .m_table td:first-child{
+  width: 170px;
+  color: #4b5668;
+  font-weight:700;
+  background: #fbfcfe;
+}
+
+@media (max-width: 680px){
+  .s_table .m_table td:first-child{width: 120px;}
+}
+
+/* ----- catalog cards (left image) ----- */
+.salon-s_catalog h2.e_head{margin-bottom: 18px;}
+.salon-2col-fix{margin-top: 18px;}
+
+.m_card-leftImg{
+  align-items:stretch;
+}
+.m_card-leftImg .e_img img{
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(18,28,45,.10);
+}
+.m_card-leftImg h3.e_head{
+  margin-top: 0;
+  margin-bottom: 10px;
+  color:#2b2f36;
+}
+.salon-card-txt-bdr{
+  border-top: 1px solid rgba(0,0,0,.12);
+  padding-top: 12px;
+}
+.m_card-leftImg .e_txt{color:var(--muted);}
+
+/* make the two-column lists breathe like screenshot */
+.salon-s_catalog .row{margin-top: 18px;}
+
+/* ----- flow (steps) ----- */
+.s_flow{background: #f7f8fa;}
+.m_flow{width:100%;}
+.flow_ctt{
+  max-width: 900px;
+  margin: 0 auto 28px;
+  background:#fff;
+  border: 2px solid var(--primary);
+  box-shadow: 0 10px 24px rgba(18,28,45,.08);
+}
+.flow_ctt + .flow_ctt{margin-top: 34px;}
+.flow_ctt{position:relative;}
+.flow_ctt::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-22px;
+  transform:translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-top: 22px solid var(--primary);
+}
+.m_flow:last-child .flow_ctt::after{display:none;}
+
+.flow_stepHead{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  background: var(--primary);
+  padding: 14px 16px;
+}
+.flow_stepHead_step{margin:0; font-weight:800;}
+.flow_stepHead_no{margin:0; font-weight:900; color:#fff;}
+.flow_stepHead_head{margin:0; font-weight:800; color:#fff;}
+
+.flow_ctt .e_txt{
+  padding: 18px 18px 22px;
+  color: var(--muted);
+}
+.flow_ctt .e_img{
+  position:absolute;
+  right: 14px;
+  top: 14px;
+  width: 170px;
+  height: 170px;
+  background: #2f6db5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.flow_ctt .e_img img{width: 82%; filter: drop-shadow(0 6px 10px rgba(0,0,0,.15));}
+
+@media (max-width: 760px){
+  .flow_ctt .e_img{display:none;}
+}
+
+/* ----- contact band (same as btnbar) ----- */
+.s_contact-btnbar{
+  padding:0;
+  background:transparent;
+}
+.s_contact-btnbar .salon-btnbar{padding: 56px 0;}
+.s_contact-btnbar .e_txt{font-weight:800;}
+
+/* ----- FAQ ----- */
+.s_faq{background:#fff;}
+.s_faq .container-fluid{max-width: 980px;}
+.s_faq h2.e_head{margin-bottom: 10px;}
+
+.m_faq{margin-top: 24px;}
+.faq_item{
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.faq_item:first-child{border-top: 1px solid var(--line);}
+
+.faq_q,
+.faq_a{
+  display:flex;
+  gap: 16px;
+  align-items:flex-start;
+}
+
+.faq_q .e_head,
+.faq_a .e_head{
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  letter-spacing:.04em;
+  color:#fff;
+  background: var(--primary);
+  margin-top: 2px;
+}
+.faq_q .e_txt{
+  flex: 1 1 auto;
+  font-weight:800;
+  color:#2b2f36;
+  padding-top: 4px;
+}
+.faq_a{margin-top: 10px;}
+.faq_a .e_txt{color:var(--muted);}
+
+/* optional accordion feel (JS toggles .is-collapsed on item) */
+.faq_item.is-collapsed .faq_a{display:none;}
+.faq_item .faq_q{cursor:pointer;}
+.faq_item .faq_q:hover .e_txt{color: var(--primary-dark);}
+
+/* ----- footer ----- */
+.s_footer-peraichi{padding:0; background:transparent;}
+.s_footer-peraichi .container-fluid{max-width: 100%; padding:0;}
+.salon-social{
+  background: linear-gradient(90deg, rgba(51, 165, 175, .85), rgba(55, 82, 180, .85));
+  padding: 44px 22px;
+  color:#fff;
+  text-align:center;
+}
+.salon-social-item{
+  display:inline-block;
+  margin: 0 10px 16px;
+  width: 28px;
+}
+.salon-social .e_txt{opacity:.95; font-weight:600;}
+
+/* ----- minor polish ----- */
+.pera1-bg-editable{background-color:#222;}
+
+/* spacing overrides to match screenshot rhythms */
+#section-3.section{padding: 36px 0;}
+#section-5.section{padding-top: 56px;}
+#section-7.section{padding-top: 72px;}
+
+/* =========================================================
+   Flow (ご契約までの流れ) - local SVG icons + layout
+   ========================================================= */
+.s_flow {
+  background: #f7f8fa;
+}
+
+.s_flow .m_flow {
+  max-width: 860px;
+  margin: 0 auto 34px;
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 16px 32px;
-  min-width: 260px;
-  text-decoration: none;
-  color: #000;
-  font-weight: 700;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.s_flow .m_flow:last-child {
+  margin-bottom: 0;
+}
+
+.s_flow .m_flow:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -24px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  border-top: 24px solid #2f6cc3;
+  filter: drop-shadow(0 2px 0 rgba(0,0,0,0.06));
+}
+
+.s_flow .flow_ctt {
+  border: 2px solid #2f6cc3;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  grid-template-rows: auto 1fr;
   overflow: hidden;
 }
 
-.cta-company { background-color: #88c5da; }
-.cta-owner   { background-color: #f8b4b0; }
-
-.cta-card::after {
-  content: "";
-  position: absolute;
-  right: -60px;
-  top: 0;
-  width: 160px;
-  height: 100%;
-  background-color: rgba(255,255,255,0.25);
-  transform: skewX(-20deg);
+.s_flow .flow_stepHead {
+  grid-column: 1;
+  grid-row: 1;
+  background: #2f6cc3;
+  color: #fff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
 }
 
-/* 絵文字アイコン用 */
-.cta-icon {
-  margin-right: 12px;
-  font-size: 32px;
+.s_flow .flow_stepHead h3 {
+  margin: 0;
+  line-height: 1;
+  font-weight: 700;
+  color: inherit;
 }
 
-/* テキスト＆矢印 */
-.cta-text { white-space: nowrap; }
-.cta-arrow { margin-left: auto; font-size: 20px; }
+.s_flow .flow_stepHead_step {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  opacity: 0.95;
+}
 
-.cta-card:hover { opacity: 0.9; }
+.s_flow .flow_stepHead_no {
+  font-size: 22px;
+}
+
+.s_flow .flow_stepHead_head {
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+
+.s_flow .e_txt {
+  grid-column: 1;
+  grid-row: 2;
+  padding: 14px 18px 18px;
+  color: #2b2f36;
+  line-height: 1.75;
+  font-size: 14px;
+}
+
+.s_flow .e_img {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  background: #3c78c9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s_flow .e_img img {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 0 rgba(0,0,0,0.06));
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 640px) {
+  .s_flow .flow_ctt {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .s_flow .e_img {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 14px 0;
+  }
+  .s_flow .e_txt {
+    grid-row: 3;
+  }
+  .s_flow .m_flow:not(:last-child)::after {
+    bottom: -22px;
+    border-left-width: 20px;
+    border-right-width: 20px;
+    border-top-width: 20px;
+  }
+}
+
+/* =========================================================
+   Footer background image
+   ========================================================= */
+.s_footer-peraichi {
+  background-image: url("./assets/footer-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/*SVGファイル修正*/
+/* ---- flow（ご契約までの流れ）アイコン位置ずれ修正 ---- */
+.s_flow .flow_ctt{
+  grid-template-rows: 58px 1fr;  /* ヘッダー高さ固定 */
+  min-height: 150px;            /* カード高さを安定させる */
+}
+
+.s_flow .flow_stepHead{
+  min-height: 58px;
+  align-items: center;
+}
+
+.s_flow .e_img{
+  grid-row: 1 / -1;             /* 全行にまたがせる（=カード全体） */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s_flow .e_img img{
+  display: block;               /* 余計な隙間防止 */
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 340" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2f6d6e"/>
+      <stop offset="0.55" stop-color="#2f6b86"/>
+      <stop offset="1" stop-color="#2b4f7a"/>
+    </linearGradient>
+    <radialGradient id="r" cx="35%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="p" width="220" height="220" patternUnits="userSpaceOnUse">
+      <circle cx="40" cy="40" r="34" fill="#ffffff" fill-opacity=".06"/>
+      <circle cx="120" cy="150" r="60" fill="#ffffff" fill-opacity=".04"/>
+      <path d="M0 220 L220 0" stroke="#ffffff" stroke-opacity=".05" stroke-width="8"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="340" fill="url(#g)"/>
+  <rect width="1600" height="340" fill="url(#p)"/>
+  <rect width="1600" height="340" fill="url(#r)"/>
+</svg>
