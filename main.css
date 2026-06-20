@@ -677,3 +677,18 @@ a{color:inherit; text-decoration:none;}
 .s_flow .e_img img{
   display: block;               /* 余計な隙間防止 */
 }
+
+
+/* ---- footer SNS icons（Peraichi CDNを使わずローカルSVGを表示） ---- */
+.salon-social-item a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+}
+.salon-social-item img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+}
